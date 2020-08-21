@@ -56,6 +56,7 @@ const App = () => {
       const res = await fetch(
         "http://api.openweathermap.org/data/2.5/weather?q=Novi%20Sad&appid=abb0aae5262dc68ed66664634715c4a8"
         // "http://api.openweathermap.org/data/2.5/weather?q=Flatts&appid=abb0aae5262dc68ed66664634715c4a8"
+        // "http://api.openweathermap.org/data/2.5/weather?q=Seattle&appid=abb0aae5262dc68ed66664634715c4a8"
       );
 
       const json = await res.json();
@@ -70,7 +71,36 @@ const App = () => {
 
   return (
     <div>
-      <h1>Novi Sad weather</h1>;
+      <div className="title-picture">
+        <h1>Novi Sad weather</h1>
+        <img
+          src={`./${rain === "dark-mode" ? "nightMoon.png" : "dayMoon.png"}`}
+          alt=""
+        />
+      </div>
+      <div className="container">
+        <p>
+          some text some text some text some text some text some textsome text
+          some text some textsome text some text some textsome text some text
+          some text
+        </p>
+        <p>
+          some text some text some text some text some text some textsome text
+          some text some textsome text some text some textsome text some text
+          some text
+        </p>
+      </div>
+      <div className="input-fields">
+        <input type="text" placeholder="Name" />
+        <input type="text" placeholder="Email" />
+      </div>
+      <div className="button-style">
+        <div className="button-rigth">
+          <button className="save-button">Save</button>
+          <button className="submit-button">Submit</button>
+        </div>
+      </div>
+
       <script>{(document.body.classList = [`${getRain()}`])}</script>
     </div>
   );
